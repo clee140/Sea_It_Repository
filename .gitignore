@@ -17,3 +17,4 @@ local.properties
 # Ignore service account
 service_account.json
 seait.keystore
+.vscode
