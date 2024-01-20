@@ -7,13 +7,12 @@
     android:background="@drawable/ocean_background"
     tools:context=".MainActivity">
 
-
     <!-- user's name -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="337dp"
-        android:layout_marginBottom="696dp"
+        android:layout_marginEnd="212dp"
+        android:layout_marginBottom="592dp"
         android:fontFamily="casual"
         android:text="User Name"
         android:textColorHighlight="#650F0F"
@@ -21,12 +20,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
+    <!-- user's profile image -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="342dp"
-        android:layout_marginBottom="500dp"
+        android:layout_width="146dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="216dp"
+        android:layout_marginBottom="416dp"
         android:fontFamily="casual"
         android:text="Edit Profile"
         android:textColorHighlight="#650F0F"
@@ -34,13 +33,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-
     <!-- view rating -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="170dp"
-        android:layout_marginBottom="634dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="544dp"
         android:fontFamily="casual"
         android:text="Rating: "
         android:textColorHighlight="#650F0F"
@@ -49,23 +48,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- user's profile image -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="351dp"
-        android:layout_marginBottom="561dp"
+        android:layout_marginEnd="228dp"
+        android:layout_marginBottom="464dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="116dp"
+        android:layout_marginBottom="512dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/btn_star"
+        app:tint="#FF9800" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="211dp"
-        android:layout_marginBottom="602dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="512dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/btn_star"
@@ -74,8 +82,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="115dp"
-        android:layout_marginBottom="602dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="512dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/btn_star"
@@ -84,8 +92,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="147dp"
-        android:layout_marginBottom="602dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="512dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/btn_star"
@@ -94,18 +102,8 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="243dp"
-        android:layout_marginBottom="602dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/btn_star"
-        app:tint="#FF9800" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="179dp"
-        android:layout_marginBottom="602dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="512dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/btn_star"
@@ -115,8 +113,9 @@
         android:id="@+id/button2"
         android:layout_width="143dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="308dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="208dp"
+        android:backgroundTint="#006994"
         android:text="Create Post"
         android:textSize="16.5sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,8 +125,9 @@
         android:id="@+id/button3"
         android:layout_width="143dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="86dp"
-        android:layout_marginBottom="235dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="208dp"
+        android:backgroundTint="#006994"
         android:text="View Posts"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,31 +137,20 @@
         android:id="@+id/button4"
         android:layout_width="216dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="168dp"
-        android:layout_marginBottom="53dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="56dp"
         android:text="Recommeded"
         android:textSize="18sp"
+        android:backgroundTint="#006994"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="140dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="83dp"
-        android:layout_marginEnd="311dp"
-        android:layout_marginBottom="309dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add" />
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="147dp"
         android:layout_height="117dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="313dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="248dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_view" />
@@ -175,6 +164,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/seait_logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="157dp"
+        android:layout_height="103dp"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="354dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
