@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fish_sea"
+    android:background="@drawable/ocean_background"
     android:textAlignment="inherit"
 
     tools:context=".MainActivity">
@@ -14,18 +14,37 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
         android:layout_marginEnd="124dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginBottom="512dp"
         android:background="#0003A9F4"
         android:fontFamily="casual"
-        android:text="Sea-It"
+        android:text="SEA-IT"
         android:textAllCaps="true"
         android:textColor="#2948F4"
         android:textFontWeight="12"
-        android:textSize="83sp"
+        android:textSize="104dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="716dp"
+        android:background="#0003A9F4"
+        android:fontFamily="casual"
+        android:text="Welcome to"
+        android:textAllCaps="true"
+        android:textColor="#2948F4"
+        android:textFontWeight="12"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -36,28 +55,43 @@
         android:layout_marginEnd="74dp"
         android:fontFamily="casual"
         android:text="A sea animal classication app"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textColor="#008EFF"
+        android:textSize="23dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.324" />
+        app:layout_constraintVertical_bias="0.32" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="147dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginBottom="11dp"
+        android:text="Sign Up"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="147dp"
         android:layout_height="68dp"
-        android:layout_marginStart="159dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="11dp"
         android:text="Login"
         android:textSize="22dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/button2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
