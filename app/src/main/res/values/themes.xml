@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.Sea_It" parent="Base.Theme.Sea_It" />
+    <style name="Theme.Sea_It.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Sea_It.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Sea_It.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

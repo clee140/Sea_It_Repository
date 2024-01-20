@@ -22,7 +22,7 @@ public class home_page extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_profile) {
-                    startActivity(new Intent(home_page.this, profile.class));
+                    startActivity(new Intent(home_page.this, user_profile.class));
                     return true;
                 }
 
