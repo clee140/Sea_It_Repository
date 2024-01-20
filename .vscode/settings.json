@@ -1,0 +1,9 @@
+{
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "java.project.sourcePaths": [
+    "src/main/java/com/seait/seait",
+    "src/test/java/com/seait/seait",
+    "src/androidTest/java/com/seait/seait"
+  ],
+  "java.project.outputPath": "build"
+}
