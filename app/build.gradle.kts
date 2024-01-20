@@ -12,7 +12,7 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
-    implementation("com.google.firebase:firebase-ml")
+    implementation("com.google.firebase:firebase-ml-vision-image-label-model:19.0.0")
 }
 
 android {
