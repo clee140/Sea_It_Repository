@@ -11,8 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,11 +45,17 @@ public class home extends AppCompatActivity {
         textView = findViewById(R.id.textView);
 
         // Display images
-        data = accessDatabase();
+//        data = accessDatabase();
 
-        for (Map<String, Object> map: data) {
-
-        }
+//        for (Map<String, Object> map: data) {
+//            String imageUrl = (String) map.get("path");
+//
+//            // Load image into ImageView using Glide
+//            ImageView imageView = findViewById(R.id.imageView);  // Replace with your ImageView
+//            Glide.with(this)
+//                    .load(imageUrl)
+//                    .into(imageView);
+//        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -73,7 +81,7 @@ public class home extends AppCompatActivity {
                 return true; // Return true to consume the selection event
             }
         });
-        accessDatabase();
+//        accessDatabase();
     }
 
     public List<Map<String, Object>> accessDatabase() {
