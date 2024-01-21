@@ -42,10 +42,10 @@
             android:name=".profile"
             android:exported="false" />
         <activity
-            android:name=".home_page"
+            android:name=".home"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
