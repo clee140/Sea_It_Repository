@@ -62,6 +62,7 @@ public class scan extends AppCompatActivity {
     private String recognizedText;
     private ImageLabeler imageLabeler;
     private TextView classification;
+    private String temp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,6 @@ public class scan extends AppCompatActivity {
         recognizeTextButton = findViewById(R.id.recognizeTextButton);
         imageView = findViewById(R.id.imageView);
         classification = findViewById(R.id.textView2);
-        //recognizedTextEt = findViewById(R.id.recognizedText);
         cameraPermissions = new String[]{Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.CAMERA,
@@ -80,8 +80,8 @@ public class scan extends AppCompatActivity {
         progressBar = new ProgressBar(this);
 
         imageLabeler = ImageLabeling.getClient(new ImageLabelerOptions.Builder()
-                        .setConfidenceThreshold(0.7f)
-                        .build());
+                .setConfidenceThreshold(0.7f)
+                .build());
 
 
         inputImageButton.setOnClickListener(new View.OnClickListener() {
@@ -95,11 +95,11 @@ public class scan extends AppCompatActivity {
             public void onClick(View view) {
                 if (imageURI == null) {
                     Toast.makeText(scan.this, "Pick image first", Toast.LENGTH_SHORT).show();
+                } else {
+                    Bitmap bitmap = loadUri(imageURI);
+                    imageView.setImageBitmap(bitmap);
+                    runClassification(bitmap);
                 }
-
-                Bitmap bitmap = loadUri(imageURI);
-                imageView.setImageBitmap(bitmap);
-                runClassification(bitmap);
             }
         });
     }
@@ -190,7 +190,6 @@ public class scan extends AppCompatActivity {
                         Toast.makeText(scan.this, "Cancelled",
                                 Toast.LENGTH_SHORT).show();
                     }
-
                 }
             }
     );
@@ -255,14 +254,18 @@ public class scan extends AppCompatActivity {
                     StringBuilder builder = new StringBuilder();
                     for (ImageLabel label : imageLabels) {
                         builder.append(label.getText())
-                                .append(" : ")
+                                .append(":")
                                 .append(label.getConfidence())
                                 .append("\n");
                     }
-                    classification.setText(builder);
+                    temp = String.valueOf(builder);
 
+                    Intent myIntent = new Intent(scan.this, image_post.class);
+                    myIntent.putExtra("mytext", temp);
+                    myIntent.putExtra("image", imageURI.toString());
+                    startActivity(myIntent);
                 } else {
-                    classification.setText("Could not classify");
+                    temp = "Could not classify";
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
