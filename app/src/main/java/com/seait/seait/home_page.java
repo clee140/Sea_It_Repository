@@ -20,11 +20,8 @@ import java.io.FileInputStream;
 import javax.annotation.Nullable;
 
 public class home_page extends AppCompatActivity {
-<<<<<<< HEAD
 
     private ImageButton imageButton1;
-=======
->>>>>>> be2ae815e6738e1d45ad2c575241eb8ae8abc935
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
