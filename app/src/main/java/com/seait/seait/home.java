@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class home extends AppCompatActivity {
@@ -31,6 +34,12 @@ public class home extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.navigation_scan) {
                     startActivity(new Intent(home.this, scan.class));
+                    return true;
+                }
+
+                if (item.getItemId() == R.id.navigation_signOut) {
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(home.this, login.class));
                     return true;
                 }
 

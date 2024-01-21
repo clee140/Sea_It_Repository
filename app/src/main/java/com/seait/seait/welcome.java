@@ -24,12 +24,27 @@ public class welcome extends AppCompatActivity {
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance();
 
-        Button btn = (Button)findViewById(R.id.button);
+        // If the user is signed in, take them to the home page
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            startActivity(new Intent(welcome.this, home.class));
+        }
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button loginBtn = (Button)findViewById(R.id.buttonLogin);
+
+        loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(welcome.this, home.class));
+                startActivity(new Intent(welcome.this, login.class));
+            }
+        });
+
+        Button signUpBtn = (Button)findViewById(R.id.buttonSignUp);
+
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(welcome.this, sign_up.class));
             }
         });
     }

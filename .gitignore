@@ -18,3 +18,4 @@ local.properties
 service_account.json
 seait.keystore
 .vscode
+google-services.json

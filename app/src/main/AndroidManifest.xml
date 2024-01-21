@@ -34,15 +34,18 @@
             android:name=".image_post"
             android:exported="false" />
         <activity
+            android:name=".login"
+            android:exported="false" />
+        <activity
+            android:name=".sign_up"
+            android:exported="false" />
+        <activity
             android:name=".user_profile"
             android:exported="false"
             android:label="@string/title_activity_user_profile"
             android:theme="@style/Theme.Sea_It.NoActionBar" />
         <activity
             android:name=".scan"
-            android:exported="false" />
-        <activity
-            android:name=".profile"
             android:exported="false" />
         <activity
             android:name=".home"

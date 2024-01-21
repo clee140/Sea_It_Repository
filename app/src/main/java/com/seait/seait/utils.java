@@ -7,6 +7,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Filter;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.google.firestore.v1.WriteResult;
 
 import java.io.IOException;
@@ -17,6 +19,7 @@ import java.util.concurrent.ExecutionException;
 
 public class utils {
     public static FirebaseFirestore db;
+    public static StorageReference storage;
     public static String PROJECTID = "seait-411804";
 
 
@@ -24,9 +27,12 @@ public class utils {
         FirebaseOptions.Builder builder = new FirebaseOptions.Builder().setProjectId(utils.PROJECTID)
                 .setApplicationId("1:514107329762:android:e57867f02d306ae9ffe2bb")
                 .setApiKey("AIzaSyAVerMMKQYas_N4Z1fGbJF5miE3Hd_17xk");
-        FirebaseApp.initializeApp(context, builder.build());
+        if (FirebaseApp.getApps(context).size() == 0) {
+            FirebaseApp.initializeApp(context, builder.build());
+        }
         // Enable Firestore logging
         FirebaseFirestore.setLoggingEnabled(true);
+        storage = FirebaseStorage.getInstance().getReference();
     }
 
     public static void exampleReadAndWrite() {

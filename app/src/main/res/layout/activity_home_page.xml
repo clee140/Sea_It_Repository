@@ -15,7 +15,7 @@
         android:fontFamily="sans-serif-black"
         android:text="Choose a Post!"
         android:textColor="#006994"
-        android:textSize="42dp"
+        android:textSize="42sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
