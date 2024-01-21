@@ -43,8 +43,8 @@
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
-        android:srcCompat="@drawable/common_google_signin_btn_icon_dark"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:srcCompat="@drawable/common_google_signin_btn_icon_dark">
 
     </com.google.android.gms.common.SignInButton>
     />
