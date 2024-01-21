@@ -33,6 +33,7 @@ public class image_post extends AppCompatActivity {
 
         Uri imageUri = Uri.parse(getIntent().getStringExtra("image"));
 
+
         imageView.setImageURI(imageUri);
 
         Button btn = (Button)findViewById(R.id.button2);
