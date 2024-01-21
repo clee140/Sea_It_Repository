@@ -45,9 +45,9 @@ public class home extends AppCompatActivity {
         // Display images
         data = accessDatabase();
 
-//        for (Map<String, Object> map: data) {
-//
-//        }
+        for (Map<String, Object> map: data) {
+
+        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

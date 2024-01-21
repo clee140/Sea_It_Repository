@@ -66,7 +66,7 @@ public class sign_up extends AppCompatActivity {
 //        System.out.println("TACO 3");
 //
 //        // Initialize firebase auth
-//        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
 //        // Initialize firebase user
 //        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 //        // Check condition
