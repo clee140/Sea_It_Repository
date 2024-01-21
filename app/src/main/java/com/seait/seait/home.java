@@ -5,6 +5,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -25,6 +27,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -44,17 +49,35 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         textView = findViewById(R.id.textView);
 
+        ImageView imageView = findViewById(R.id.turtle);
+
+        Glide.with(this)
+                .load("https://images.unsplash.com/photo-1589805719243-774da93c3cb8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VhJTIwc2hlbGxzfGVufDB8fDB8fHww"
+                ).into(imageView);
+
         // Display images
 //        data = accessDatabase();
-
+//
 //        for (Map<String, Object> map: data) {
 //            String imageUrl = (String) map.get("path");
 //
 //            // Load image into ImageView using Glide
-//            ImageView imageView = findViewById(R.id.imageView);  // Replace with your ImageView
+//            ImageView imageView = new ImageView(this);
 //            Glide.with(this)
 //                    .load(imageUrl)
-//                    .into(imageView);
+//                    .into(new CustomTarget<Drawable>() {
+//                        @Override
+//                        public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {
+//                            // Use the Drawable resource as needed
+//                            ImageView imageView = findViewById(R.id.imageView);
+//                            imageView.setImageDrawable(resource);
+//                        }
+//
+//                        @Override
+//                        public void onLoadCleared(@Nullable Drawable placeholder) {
+//                            // Handle resource cleared event
+//                        }
+//                    });
 //        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);

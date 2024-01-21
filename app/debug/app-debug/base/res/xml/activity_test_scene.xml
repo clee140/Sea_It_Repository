@@ -1,0 +1,22 @@
+
+µ
+;
+android*http://schemas.android.com/apk/res/android<
+7
+motion'http://schemas.android.com/apk/res-auto<MotionScene*Ç
+¾
+Transition"h
+'http://schemas.android.com/apk/res-autoconstraintSetStart	@id/start"	(•‚Œø2
+Êƒ øid/start0"c
+'http://schemas.android.com/apk/res-autoconstraintSetEnd@+id/end"	(”‚Œø2
+Á øid/end0"J
+'http://schemas.android.com/apk/res-autoduration1000"	(õ‚Œø2:0è*
+KeyFrameSet
+	 *t
+lConstraintSet"[
+*http://schemas.android.com/apk/res/androidid
+@+id/start"(Ð„2
+Êƒ øid/start0,*p
+hConstraintSet"W
+*http://schemas.android.com/apk/res/androidid@+id/end"(Ð„2
+Á øid/end0*<
