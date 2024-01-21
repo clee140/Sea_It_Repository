@@ -33,7 +33,7 @@ import java.util.Map;
 public class home extends AppCompatActivity {
     private TextView textView;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private List<Map<String, Object> data;
+    private List<Map<String, Object>> data;
 
 
     @Override
