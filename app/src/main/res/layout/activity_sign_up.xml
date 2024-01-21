@@ -10,10 +10,9 @@
 
     <!-- signup text -->
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView5"
         android:layout_width="300dp"
         android:layout_height="55dp"
-<<<<<<< HEAD
         android:text="Sign Up"
         android:textSize="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,12 +23,6 @@
 
 
         />
-=======
-        android:layout_alignParentLeft="true"
-        android:fontFamily="sans-serif-black"
-        android:text="Sign Up"
-        android:textSize="42dp" />
->>>>>>> 9ab0651aba55a2286b14a47b77c98d509a43e198
 
     <ImageView
         android:id="@+id/imageView7"

@@ -58,7 +58,7 @@ public class login extends AppCompatActivity {
 //        });
 //
 //        // Initialize firebase auth
-//        firebaseAuth = FirebaseAuth.getInstance();
+            firebaseAuth = FirebaseAuth.getInstance();
 //        // Initialize firebase user
 //        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 //        // Check condition

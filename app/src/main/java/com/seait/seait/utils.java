@@ -26,7 +26,7 @@ public class utils {
     public static void initializeUtils(android.content.Context context) {
         FirebaseOptions.Builder builder = new FirebaseOptions.Builder().setProjectId(utils.PROJECTID)
                 .setApplicationId("1:514107329762:android:e57867f02d306ae9ffe2bb")
-                .setApiKey("AIzaSyAVerMMKQYas_N4Z1fGbJF5miE3Hd_17xk");
+                .setApiKey("AIzaSyAVerMMKQYas_N4Z1fGbJF5miE3Hd_17xk").setStorageBucket("seait-411804.appspot.com");
         if (FirebaseApp.getApps(context).size() == 0) {
             FirebaseApp.initializeApp(context, builder.build());
         }

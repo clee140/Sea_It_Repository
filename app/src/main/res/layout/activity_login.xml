@@ -16,11 +16,7 @@
         app:srcCompat="@drawable/seait_logo" />
 
     <EditText
-<<<<<<< HEAD
         android:id="@+id/editTextEmailAddress"
-=======
-        android:id="@+id/editTextEmail"
->>>>>>> 9ab0651aba55a2286b14a47b77c98d509a43e198
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Email"
