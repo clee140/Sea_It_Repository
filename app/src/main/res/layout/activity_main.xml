@@ -20,7 +20,7 @@
         android:fontFamily="casual"
         android:text="SEA-IT"
         android:textAllCaps="true"
-        android:textColor="#2948F4"
+        android:textColor="#006994"
         android:textFontWeight="12"
         android:textSize="104dp"
         android:textStyle="bold"
