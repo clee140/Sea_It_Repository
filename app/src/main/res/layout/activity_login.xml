@@ -9,6 +9,12 @@
 
     <!-- username -->
 
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:layout_height="262dp"
+        app:srcCompat="@drawable/seait_logo" />
+
     <EditText
         android:id="@+id/editTextUsername"
         android:layout_width="match_parent"
@@ -25,22 +31,22 @@
         android:inputType="textPassword" />
 
     <!-- login Button -->
+
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:backgroundTint="#006994"
         android:text="Login" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark"
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></com.google.android.gms.common.SignInButton>
+        android:srcCompat="@drawable/common_google_signin_btn_icon_dark"
+        android:layout_height="wrap_content">
+
+    </com.google.android.gms.common.SignInButton>
     />
 
 
