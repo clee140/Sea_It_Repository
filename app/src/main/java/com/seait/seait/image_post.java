@@ -34,13 +34,14 @@ public class image_post extends AppCompatActivity {
 
         Uri imageUri = Uri.parse(getIntent().getStringExtra("image"));
 
+
         imageView.setImageURI(imageUri);
 
         Button btn = (Button)findViewById(R.id.button2);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(image_post.this, home_page.class);
+                Intent myIntent = new Intent(image_post.this, home_page_2.class);
                 myIntent.putExtra("user_input", editText.getText());
                 myIntent.putExtra("image", imageURI);
                 startActivity(myIntent);

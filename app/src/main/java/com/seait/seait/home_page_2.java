@@ -8,42 +8,43 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.io.FileInputStream;
-
-import javax.annotation.Nullable;
-
-public class home_page extends AppCompatActivity {
-<<<<<<< HEAD
-
-    private ImageButton imageButton1;
-=======
->>>>>>> be2ae815e6738e1d45ad2c575241eb8ae8abc935
+public class home_page_2 extends AppCompatActivity {
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_page);
+        setContentView(R.layout.activity_home_page2);
 
-        utils.initializeUtils(this);
+        imageView = findViewById(R.id.imageView3);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        Uri imageUri = Uri.parse(getIntent().getStringExtra("image"));
+
+
+        imageView.setImageURI(imageUri);
+
+
+
+
+
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView2);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_profile) {
-                    startActivity(new Intent(home_page.this, user_profile.class));
+                    startActivity(new Intent(home_page_2.this, user_profile.class));
                     return true;
                 }
 
                 if (item.getItemId() == R.id.navigation_scan) {
-                    startActivity(new Intent(home_page.this, scan.class));
+                    startActivity(new Intent(home_page_2.this, scan.class));
                     return true;
                 }
 
