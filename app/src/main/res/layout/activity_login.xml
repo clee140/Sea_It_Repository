@@ -16,10 +16,10 @@
         app:srcCompat="@drawable/seait_logo" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="text" />
 
     <!-- password EditText -->
