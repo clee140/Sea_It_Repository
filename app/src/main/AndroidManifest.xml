@@ -21,6 +21,9 @@
         android:theme="@style/Theme.Sea_It"
         tools:targetApi="31">
         <activity
+            android:name=".home_page_2"
+            android:exported="false" />
+        <activity
             android:name=".image_post"
             android:exported="false" />
         <activity
