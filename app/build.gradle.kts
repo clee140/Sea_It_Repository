@@ -38,7 +38,7 @@ android {
 dependencies {
     // Import the Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:32.7.1"))
-
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.0")
     //Firebase signin stuff
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

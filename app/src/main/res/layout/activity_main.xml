@@ -7,7 +7,7 @@
     android:background="@drawable/ocean_background"
     android:textAlignment="inherit"
 
-    tools:context=".MainActivity">
+    tools:context=".welcome">
 
     <TextView
         android:layout_width="wrap_content"

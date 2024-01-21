@@ -3,7 +3,6 @@ package com.seait.seait;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -41,7 +40,7 @@ public class image_post extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent myIntent = new Intent(image_post.this, home_page_2.class);
+                Intent myIntent = new Intent(image_post.this, home.class);
                 myIntent.putExtra("user_input", editText.getText());
                 myIntent.putExtra("image", imageURI);
                 startActivity(myIntent);
