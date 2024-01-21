@@ -17,6 +17,8 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.ImageDecoder;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -27,6 +29,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,8 +37,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
+import com.google.mlkit.vision.common.InputImage;
+import com.google.mlkit.vision.label.ImageLabel;
+import com.google.mlkit.vision.label.ImageLabeler;
+import com.google.mlkit.vision.label.ImageLabelerOptionsBase;
+import com.google.mlkit.vision.label.ImageLabeling;
+import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 
 import java.io.IOException;
+import java.util.List;
 
 public class scan extends AppCompatActivity {
     private MaterialButton inputImageButton; // UI view
@@ -50,6 +60,8 @@ public class scan extends AppCompatActivity {
     private String[] storagePermissions; // Permission to pick image from camera/gallery.
     private ProgressBar progressBar;
     private String recognizedText;
+    private ImageLabeler imageLabeler;
+    private TextView classification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,12 +71,18 @@ public class scan extends AppCompatActivity {
         inputImageButton = findViewById(R.id.inputImageButton);
         recognizeTextButton = findViewById(R.id.recognizeTextButton);
         imageView = findViewById(R.id.imageView);
+        classification = findViewById(R.id.textView2);
         //recognizedTextEt = findViewById(R.id.recognizedText);
         cameraPermissions = new String[]{Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagePermissions = new String[]{Manifest.permission.CAMERA,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE};
         progressBar = new ProgressBar(this);
+
+        imageLabeler = ImageLabeling.getClient(new ImageLabelerOptions.Builder()
+                        .setConfidenceThreshold(0.7f)
+                        .build());
+
 
         inputImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +96,10 @@ public class scan extends AppCompatActivity {
                 if (imageURI == null) {
                     Toast.makeText(scan.this, "Pick image first", Toast.LENGTH_SHORT).show();
                 }
+
+                Bitmap bitmap = loadUri(imageURI);
+                imageView.setImageBitmap(bitmap);
+                runClassification(bitmap);
             }
         });
     }
@@ -222,5 +244,45 @@ public class scan extends AppCompatActivity {
             }
             break;
         }
+    }
+
+    private void runClassification(Bitmap bitmap) {
+        InputImage inputImage = InputImage.fromBitmap(bitmap, 0);
+        imageLabeler.process(inputImage).addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
+            @Override
+            public void onSuccess(List<ImageLabel> imageLabels) {
+                if (imageLabels.size() > 0) {
+                    StringBuilder builder = new StringBuilder();
+                    for (ImageLabel label : imageLabels) {
+                        builder.append(label.getText())
+                                .append(" : ")
+                                .append(label.getConfidence())
+                                .append("\n");
+                    }
+                    classification.setText(builder);
+
+                } else {
+                    classification.setText("Could not classify");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private Bitmap loadUri(Uri uri) {
+        Bitmap bitmap = null;
+
+        try {
+            ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), uri);
+            bitmap = ImageDecoder.decodeBitmap(source);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return bitmap;
+
     }
 }
